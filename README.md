@@ -1,8 +1,8 @@
 # LLM Inference Gateway
 
 A backend gateway that sits in front of an LLM API and adds the pieces a
-production inference service actually needs: response caching, per-key
-rate limiting, and priority-based request ordering — plus a small live
+production inference service actually needs: response caching,
+rate limiting, and priority based request ordering plus a small live
 dashboard to watch it work.
 
 ## Architecture
@@ -26,10 +26,10 @@ ahead of standard tier ones.
 
 ### Why MongoDB *and* Upstash, not just one
 
-- **MongoDB** response cache (TTL index auto-expires entries),
-  request metrics log, and the API-key/tier lookup. Mongo's
+- **MongoDB** response cache (TTL index auto expires entries),
+  request metrics log, and the API key/tier lookup. Mongo's
   TTL index handles cache expiry natively.
-- **Upstash Redis** rate limiting only. It's REST-based, so it doesn't
+- **Upstash Redis** rate limiting only. It's REST based, so it doesn't
   need a persistent connection a real problem for MongoDB in
   serverless functions, which spin up fresh per request and can exhaust
   a connection pool fast without careful singleton handling Upstash also ships a purpose built
