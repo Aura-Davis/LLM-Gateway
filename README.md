@@ -80,4 +80,4 @@ Open [http://localhost:3000](http://localhost:3000) — the dashboard has a
 ## Tech stack
 
 Next.js (App Router), MongoDB Atlas, Upstash Redis, Google Gemini API,
-Recharts, deployed on Vercel
+Recharts
